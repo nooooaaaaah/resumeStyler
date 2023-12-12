@@ -1,0 +1,68 @@
+/* Define the page layout */
+
+body {
+	font-family: FiraCode Nerd Font, Arial, sans-serif;
+	padding: 20px;
+
+	background: -webkit-gradient(
+		linear,
+		100% 0%,
+		0% 0%,
+		from(#a638f4),
+		to(#0decd6)
+	);
+}
+
+h1 {
+	font-size: 17px;
+	margin-bottom: 2px;
+}
+
+p {
+	font-size: 12px;
+	background: -webkit-linear-gradient(45deg, #a638f4, #0decd6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	line-height: 1.5;
+    padding: 10px;
+}
+
+blockquote {
+	text-align: left;
+	line-height: 1.6;
+}
+
+h2 {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+h3 {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+p :not(blockquote p) {
+	text-align: center;
+	font-size: 12px;
+	background: -webkit-linear-gradient(45deg, #a638f4, #0decd6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	line-height: 1.5;
+}
+
+ul {
+	list-style-type: square; /* Remove default bullets */
+	padding: 0;
+	margin: 0;
+}
+
+ul li {
+	font-size: 12px;
+	padding: 5px 0; /* Add some padding to each list item */
+    margin-left: 40px;
+}
+
+ul li:last-child {
+	border-bottom: none; /* Remove the border from the last list item */
+}
