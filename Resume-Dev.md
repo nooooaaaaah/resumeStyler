@@ -22,8 +22,9 @@
 
 ### Data Extraction | Freelance | NTWRK
 
-- Engineered a Python-based data extraction tool to retrieve information from a client's website using concurrent requests and backend API endpoints.
-- Conducted data cleaning and manipulation, ensuring readability and format adaptability.
+- Engineered a Python-based web scrapping and data extraction tool
+- Utilized headless browsers and API calls to extract data from multiple sources.
+- Found areas that could be exploited to access sensitive data and provided recommendations for improvement.
 - Delivered data in a structured format for seamless integration into the client’s toolchain.
 
 ### File Bucket | Skills Project
