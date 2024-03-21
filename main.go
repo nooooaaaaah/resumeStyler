@@ -12,13 +12,18 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 3 {
-		fmt.Println("Please provide a file name and a CSS file")
+	var cssFile string
+	if len(os.Args) < 2 {
+		fmt.Println("Please provide a file name and a optional CSS file")
 		os.Exit(1)
 	}
 
 	fileName := os.Args[1]
-	cssFile := os.Args[2]
+	if len(os.Args) < 3 {
+		cssFile = "style1.css"
+	} else {
+		cssFile = os.Args[2]
+	}
 	pdfFileName := strings.Replace(fileName, ".md", ".pdf", 1)
 
 	input, err := os.ReadFile(fileName)
@@ -124,6 +129,8 @@ func htmlToPdf(html string) *wkhtmltopdf.PDFGenerator {
 }
 
 // Writes the PDF to a file
+// Writes to directory of the input file
+// Not necessarily the place the script is run from
 func writePdf(pdf *wkhtmltopdf.PDFGenerator, fileName string) {
 	err := pdf.WriteFile(fileName)
 	if err != nil {
