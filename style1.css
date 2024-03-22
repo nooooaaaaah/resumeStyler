@@ -1,54 +1,55 @@
 /* Define the page layout */
 
 body {
-	font-family: FiraCode Nerd Font, Arial, sans-serif;
-	padding: 20px;
+    font-family:
+        /* FiraCode Nerd Font, */ Arial, sans-serif;
+    padding: 20px;
 }
 
 h1 {
-	font-size: 17px;
-	margin-bottom: 2px;
+    font-size: 17px;
+    margin-bottom: 2px;
 }
 
 p {
-	font-size: 12px;
-	line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.5;
     padding: 10px;
 }
 
 blockquote {
-	text-align: left;
-	line-height: 1.6;
+    text-align: left;
+    line-height: 1.6;
 }
 
 h2 {
-	font-size: 18px;
-	margin-bottom: 5px;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 h3 {
-	font-size: 14px;
-	margin-bottom: 5px;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 p :not(blockquote p) {
-	text-align: center;
-	font-size: 12px;
-	line-height: 1.5;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 ul {
-	list-style-type: square; /* Remove default bullets */
-	padding: 0;
-	margin: 0;
+    list-style-type: circle; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
 }
 
 ul li {
-	font-size: 12px;
-	padding: 5px 0; /* Add some padding to each list item */
+    font-size: 12px;
+    padding: 5px 0; /* Add some padding to each list item */
     margin-left: 40px;
 }
 
 ul li:last-child {
-	border-bottom: none; /* Remove the border from the last list item */
+    border-bottom: none; /* Remove the border from the last list item */
 }

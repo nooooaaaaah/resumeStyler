@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"embed"
 	"fmt"
 	"os"
 	"strings"
@@ -11,6 +12,9 @@ import (
 	"golang.org/x/net/html"
 )
 
+//go:embed style1.css
+var defaultCss embed.FS
+
 func main() {
 	var cssFile string
 	if len(os.Args) < 2 {
@@ -19,10 +23,20 @@ func main() {
 	}
 
 	fileName := os.Args[1]
+	cssBinary, err := defaultCss.ReadFile("style1.css")
+	if err != nil {
+		fmt.Println("Error reading embeded CSS file:", err)
+		os.Exit(1)
+	}
 	if len(os.Args) < 3 {
-		cssFile = "style1.css"
+		cssFile = string(cssBinary)
 	} else {
-		cssFile = os.Args[2]
+		css, err := os.ReadFile(os.Args[2])
+		if err != nil {
+			fmt.Printf("Error reading CSS file on line %d: %v\n", 38, err)
+			os.Exit(1)
+		}
+		cssFile = string(css)
 	}
 	pdfFileName := strings.Replace(fileName, ".md", ".pdf", 1)
 
@@ -31,22 +45,17 @@ func main() {
 		fmt.Println("Error reading file:", err)
 		os.Exit(1)
 	}
-	css, err := os.ReadFile(cssFile)
-	if err != nil {
-		fmt.Println("Error reading CSS file:", err)
-		os.Exit(1)
-	}
 
 	html := blackfriday.Run(input)
 	fmt.Println(string(html))
-	styledHtml := formatHtml(string(html), string(css))
+	styledHtml := formatHtml(string(html), cssFile)
 	os.WriteFile("resume.html", []byte(styledHtml), 0644)
 	pdf := htmlToPdf(styledHtml)
 	writePdf(pdf, pdfFileName)
 
 }
 
-// Removes erroneous characters from the HTML string and wraps each heading and the section below it in a div
+// Removes erroneous characters from the HTML string and wraps each section heading and the section below it in a div
 func formatHtml(htmlStr string, css string) string {
 	htmlStr = removeErroneousChars(htmlStr)
 
