@@ -1,5 +1,4 @@
-module resumeFormatter
-
+module github.com/nooooaaaaah/resumeStyler
 go 1.21.4
 
 require (
