@@ -1,55 +1,109 @@
-/* Define the page layout */
+/* Define the page layout with a more readable color theme */
 
 body {
-    font-family:
-        /* FiraCode Nerd Font, */ Arial, sans-serif;
-    padding: 20px;
+    font-family: "Helvetica", Arial, sans-serif;
+    padding: 40px;
+    max-width: 8.5in;
+    margin: auto;
+    background: #ffffff;
+    color: #333333;
+    height: 11in;
+    overflow: auto;
 }
 
 h1 {
-    font-size: 17px;
-    margin-bottom: 2px;
-}
+    font-size: 17.5px;
+    color: #000000;
 
-p {
-    font-size: 12px;
-    line-height: 1.5;
-    padding: 10px;
-}
-
-blockquote {
-    text-align: left;
-    line-height: 1.6;
+    /* Black color for primary headings */
 }
 
 h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 17px;
+    margin-bottom: 4.5px;
+    color: #222222;
+    /* Very dark grey for secondary headings */
 }
 
 h3 {
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #555555;
+    /* Medium grey for tertiary headings */
 }
 
-p :not(blockquote p) {
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.5;
+p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    padding: 2px;
+    padding-bottom: 0%;
+    color: #333333;
+    /* Dark grey for better contrast on white background */
+}
+
+p:not(blockquote p) {
+    text-align: justify;
+}
+
+blockquote p {
+    text-align: left;
+    line-height: normal;
+    padding: 0;
+    font-style: italic;
+    border-left: none;
+    /* Dark grey border */
+    margin-left: 0;
+    padding-left: 1em;
 }
 
 ul {
-    list-style-type: circle; /* Remove default bullets */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 ul li {
-    font-size: 12px;
-    padding: 5px 0; /* Add some padding to each list item */
-    margin-left: 40px;
+    font-size: 13.5px;
+    padding: 4px 0;
+    margin-left: 20px;
+    line-height: 1.3;
+    position: relative;
 }
 
-ul li:last-child {
-    border-bottom: none; /* Remove the border from the last list item */
+ul li::before {
+    content: "";
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+}
+
+thead th {
+    display: none;
+}
+
+tbody td {
+    padding: 5px;
+    border: none;
+    /* No borders for table cells */
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+    /* Very light grey hover color for tables */
+}
+
+table {
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+a {
+    color: #333333;
+    /* Dark grey for better contrast on white background */
+    text-decoration: none;
+    /* No underline for links */
+    cursor: pointer;
 }
